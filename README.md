@@ -1,28 +1,24 @@
-
-
-
-
-
-
-
-
-
-
+/*
+Component Map
 React YouTube Project - Component Map
 
-Component Map
-1. Main - App.jsx      (aka Home)
-2. Nav - Nav.jsx
-3. Search - SearchBar.jsx
-4. About Page - AboutPage.jsx
-5. Showpage - ShowPage.jsx
-	a. Comment Form - CommentForm.jsx
-6. Footer - Footer.jsx
-	a. Sitemap - SiteMap.jsx
-7. Readme - README.MD
-8. //data/fetch.jsx
-9. assets - photos
-10. Error page (404 Error)
+C1. Main - App.jsx (aka Home) define state for videos here
+		a. Search - SearchBar.jsx (child of Main)
+		b. NavBar - NavBar.jsx (child of Main)
+		b. VideoList - VideoList.jsx (child of Main)
+		c. Showpage - ShowPage.jsx (child of Main)
+			    i. Comment Form - CommentForm.jsx (child component of ShowPage)
+		d. About Page - AboutPage.jsx
+		e.  Sitemap - SiteMap.jsx (child of Main)
+2. Readme - README.MD
+3. //data/fetch.jsx (not in Components Folder)
+4. assets - photos (not in components Folder)
+
+
+
+removed :
+  <Route path="/comment/:id" element={<CommentForm />} />
+*/
 
 
 Priorities
