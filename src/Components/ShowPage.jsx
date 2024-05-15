@@ -1,15 +1,48 @@
-import React from 'react'
-import CommentForm from "./Components/CommentForm";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import CommentForm from './CommentForm';
+/* eslint-disable react/prop-types */
+
 
 function ShowPage() {
-  return (
-    <div>
-      <CommentForm />
-    </div>
-  )
+    const { id } = useParams(); // Extract video ID from URL
+    const [video, setVideo] = useState(null);
+  
+
+    useEffect(() => {
+        // Fetch video details from YouTube API
+        fetch(`https://youtube.googleapis.com/youtube/v3/videos?id=${id}&part=snippet&key=${key}`)
+            .then(response => response.json())
+            .then(data => {
+                setVideo(data.items[0]); // Assuming only one video is returned
+            })
+            .catch(error => console.error('Error fetching video:', error));
+    }, [id, key]);
+
+    return (
+        <div>
+            {video && (
+                <div>
+                    <h2>{video.snippet.title}</h2>
+                    <p>{video.snippet.description}</p>
+                    <iframe
+                        title="video"
+                        width="560"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${id}`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                    <CommentForm />
+                </div>
+            )}
+        </div>
+    );
 }
 
-export default ShowPage
+export default ShowPage;
+
 
 /*
 
