@@ -1,4 +1,4 @@
-const key = import.meta.env.VITE_API_BASE_URL;
+export const key = import.meta.env.VITE_API_BASE_URL;
 
 export function getVideoById(id) {
     return fetch(`${key}&id=${id}`)

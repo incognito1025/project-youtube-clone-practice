@@ -2,12 +2,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  /* display: grid;
+  grid-template-columns: repeat (2, 1fr);
+  grid-gap: 20px; */
 }
 
 .video-item {
-  flex: 0 1 calc(33.33% - 20px); /* Adjust the width of each video item */
-  margin-bottom: 20px;
+  flex: 0 1 calc(33.33% - 20px); 
+  /* Adjust the width of each video item */
+  /* margin-bottom: 20px;*/
   box-sizing: border-box;
+
+  flex: 1 1 clac(25% - 16px);
+  max-width: calc(25% - 16px);
+  
 }
 
 .video-link {
@@ -33,3 +41,4 @@
 .video-channel {
   color: #666;
 }
+

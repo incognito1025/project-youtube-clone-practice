@@ -13,11 +13,14 @@ function VideoList( { videos } ) {
 						<div key={index}>
 							<img src={element.snippet.thumbnails.default.url}
 							alt="thumbnail" />
-							<p>
-								{element.snippet.title}
-							</p>
 
-							<p>
+							<div className="title">
+							<h3>
+								{element.snippet.title}
+							</h3>
+							</div>
+
+							<p className="channel">
 								{element.snippet.channelTitle}
 							</p>
 						</div>
