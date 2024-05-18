@@ -23,7 +23,7 @@ function VideoList( { videos } ) {
 							<p className="channel">
 								{element.snippet.channelTitle}
 							</p>
-						</div>
+						</div>ß
 					</Link>
 				</div>
 			)}

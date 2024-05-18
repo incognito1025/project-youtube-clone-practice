@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CommentForm from './CommentForm';
 import { key } from '../data/fetch';
 /* eslint-disable react/prop-types */
 
 
-function ShowPage() {
+export default function Video() {
     const { id } = useParams(); // Extract video ID from URL
-    const [video, setVideo] = useState(null);
+    const [video, setVideo] = useState({});
   
 
     useEffect(() => {
@@ -15,17 +15,18 @@ function ShowPage() {
         fetch(`https://youtube.googleapis.com/youtube/v3/videos?id=${id}&part=snippet&key=${key}`)
             .then(response => response.json())
             .then(data => {
-                setVideo(data.items[0]); // Assuming only one video is returned
+                setVideo(data)
+                console.log(data.items); // Assuming only one video is returned
             })
             .catch(error => console.error('Error fetching video:', error));
-    }, [id, key]);
+    }, [id]);
 
     return (
         <div>
             {video && (
                 <div>
-                    <h2>{video.snippet.title}</h2>
-                    <p>{video.snippet.description}</p>
+                    <h2>{video.snippet?.title}</h2>
+                    <p>{video.snippet?.description}</p>
                     <iframe
                         title="video"
                         width="560"
@@ -42,7 +43,6 @@ function ShowPage() {
     );
 }
 
-export default ShowPage;
 
 
 /*
@@ -60,6 +60,8 @@ export default ShowPage;
 1. Readme - README.MD
 2. //data/fetch.jsx (not in Components Folder)
 3. assets - photos (not in components Folder)
+ 
+// ? - this means optional chain in the code snippet
 
 
 */

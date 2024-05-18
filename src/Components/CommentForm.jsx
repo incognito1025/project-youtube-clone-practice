@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './CommentForm.css';
 import { FaHamburger } from 'react-icons/fa'; // Import hamburger button icon
-import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
+// import ErrorMessage from './ErrorMessage'; // Import ErrorMessage component
 
 const CommentForm = () => {
     const [formInput, setFormInput] = useState({
         name: '',
         comment: ''
     });
-    const [error, setError] = useState('');
+    // const [error, setError] = useState('');
     const [comments, setComments] = useState([]); // State to store comments
 
     //
@@ -36,7 +36,7 @@ const CommentForm = () => {
             name: '',
             comment: ''
         });
-        setError('');
+        // setError('');
     };
 
 

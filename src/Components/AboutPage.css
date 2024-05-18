@@ -22,7 +22,7 @@ team-list-container {
 }
 
 .meet-team {
-    color: black
+    color: black;
     transition: transform 2.0s ease; /* Smooth transition for transform */
     transform: scale(1.4);
     transform: translateZ(100px); /* Move forward */
@@ -122,7 +122,7 @@ h20:hover,
 }
 
 @media (
-    max-width: 700px;
+    max-width: 700px
 ) {
     .h20 {
         padding: 15px;

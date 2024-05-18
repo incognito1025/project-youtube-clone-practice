@@ -15,7 +15,10 @@ export default function SearchBar({ searchValue, setSearchValue, setVideos }) { 
         `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=8&q=${searchValue}&key=${key}`
       )
     .then(response => response.json())
-    .then(data => setVideos(data.items))
+    .then(data => {
+        console.log(data.items)
+        setVideos(data.items)
+    })
     .catch((error) => {
         console.log(error)
     })

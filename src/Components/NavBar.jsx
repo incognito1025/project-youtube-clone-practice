@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaHome, FaUser, FaSubscript, FaVideo, FaHistory } from 'react-icons/fa';
 import './NavBar.css';
@@ -18,9 +18,9 @@ const NavBar = () => {
         }, 2500); // Delay closing the menu to allow mouse to re-enter
     };
 
-    const cancelClose = () => {
-        clearTimeout(timeoutRef.current);
-    };
+    // const cancelClose = () => {
+    //     clearTimeout(timeoutRef.current);
+    // };
 
     const handleClickOutside = (event) => {
         if (dashboardRef.current && !dashboardRef.current.contains(event.target)) {
